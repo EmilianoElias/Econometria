@@ -1,7 +1,7 @@
 ###
 ###   Econometría
 ###   Clase 1
-###
+####
 
 E <- c("Eco", 1, "E")
 
