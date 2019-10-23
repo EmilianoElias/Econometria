@@ -1,0 +1,21 @@
+---
+title: "Tarea RMarkdown"
+author: "Emiliano Elias"
+date: "9/10/2019"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+plot(data)
+
+cor(data, y=NULL, use="everything", method = c("pearson", "kendall", "spearman"))
+ 
+summary(data)
+
+stat.desc(data)
+```
+
