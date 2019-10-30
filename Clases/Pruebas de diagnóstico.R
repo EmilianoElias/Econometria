@@ -20,17 +20,17 @@ cor(hprice1, use = "everything")
 anova2 <- anova(reg)
 #Heteroscedasticidad
 #Prueba BPG
-bptest(reg1)
+bptest(reg1, studentize = FALSE)
 
 #Prueba White sin terminos cruzados
-bptest(reg1, ~ fitted(reg1) + I(fitted(reg1)^2))
+bptest(reg1, ~ fitted(reg1) + I(fitted(reg1)^2), studentize = FALSE)
 
 #Forma funcional
-resettest(reg)
+resettest(reg1)
 
 #Autocorrelacion
-dwtest(reg)
-bgtest(reg)
+dwtest(reg1)
+bgtest(reg1)
 
 #Normalidad
-jarque.bera.test(residuals(reg))
+jarque.bera.test(residuals(reg1))
