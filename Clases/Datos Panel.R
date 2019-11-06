@@ -1,12 +1,13 @@
 #Datos panel en R
+install.packages(c("plm", "stargazer"))
 library(plm)
 library(stargazer)
 
-data<-read.csv("panel_wage.csv",header = TRUE)
+data<-read.csv("Data/panel_wage.csv",header = TRUE)
 datos.panel1<-pdata.frame(data, index = c("id","t"))
 pdim(datos.panel1)
 
-pool<-plm(lwage ~ exp+exp2+wks+ed,data = datos.panel1,model = "pooling")
+pool<-plm(lwage ~ exp+exp2+wks+ed,data = datos.panel1,model = "pooling")  ## datos agrupados, F mayor que 4
 summary(pool)
 
 fixed<-plm(lwage ~ exp+exp2+wks+ed,data = datos.panel1,model = "within")
